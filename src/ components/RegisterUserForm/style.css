@@ -1,0 +1,121 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styles */
+.container {
+  width: 100%;
+  max-width: 600px; /* Limit the form width for larger screens */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Form Header */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Flex Layout */
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Form Label Styles */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Input and Textarea Styles */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #5d5dff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(93, 93, 255, 0.3);
+}
+
+input[type="email"],
+input[type="text"],
+input[type="phone"] {
+  height: 40px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Button Styles */
+button {
+  padding: 12px;
+  background-color: #5d5dff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4b4bff;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(93, 93, 255, 0.3);
+}
+.registration-link {
+  text-align: right;
+  text-transform: capitalize;
+  padding: 8px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    width: 90%; /* Form takes 90% of the width on smaller screens */
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
