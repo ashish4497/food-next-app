@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUserAuth } from "@/store/slice/authSlice";
+import { loginUserAuth } from "@/store/slice/authSlice/authActionSlice";
+import { useRouter } from "next/navigation";
 
 export default function LoginUser() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.login);
 
@@ -23,7 +25,18 @@ export default function LoginUser() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await dispatch(loginUserAuth(userDetail));
+    const resp = await dispatch(loginUserAuth(userDetail));
+    const acessToken = resp.payload.token;
+    if (acessToken) {
+      localStorage.setItem("token", acessToken);
+      router.push("/");
+    } else {
+      alert("ashish");
+    }
+  };
+
+  const handleregister = () => {
+    router.push("/register");
   };
 
   return (
@@ -37,6 +50,7 @@ export default function LoginUser() {
           name="email"
           value={userDetail.email}
           onChange={(e) => handleChange(e)}
+          required
         />
         <label>Password</label>
         <input
@@ -45,9 +59,12 @@ export default function LoginUser() {
           name="password"
           value={userDetail.password}
           onChange={(e) => handleChange(e)}
+          required
         />
         <button>Login</button>
-        <p className="registration-link">Registeruser</p>
+        <p className="registration-link" onClick={handleregister}>
+          Register user
+        </p>
       </form>
     </div>
   );

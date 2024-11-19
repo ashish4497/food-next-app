@@ -31,15 +31,16 @@ body {
 h2 {
   text-align: center;
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   color: #333;
+  font-weight: 500;
 }
 
 /* Form Flex Layout */
 .flex {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 /* Form Label Styles */
@@ -47,6 +48,7 @@ label {
   font-size: 0.95rem;
   font-weight: 500;
   color: #555;
+  margin-bottom: 0;
 }
 
 /* Input and Textarea Styles */
@@ -88,6 +90,7 @@ button {
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 18px;
 }
 
 button:hover {
